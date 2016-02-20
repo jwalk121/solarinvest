@@ -1,0 +1,26 @@
+from yahoo_finance import Share
+
+def solar_value(myString):
+    print(myString)
+    Ticker = input("What's the ticker symbol of solar company?")
+    stock_ticker = Share(Ticker)
+    print("Now lets figure out how valuable this company is")
+    print("Market Capital is: ")
+    market_cap = (stock_ticker.get_market_cap())
+    print(market_cap)
+    market_cap_num = str(market_cap[:-1])
+    #print(market_cap_num)
+    stock_price = stock_ticker.get_price()
+    share_count = (float(market_cap_num) / float(stock_price))
+    print("~Share Count is: ")
+    print(share_count)
+    solar_output = input("How much gigiwatt does " + Ticker + " output per year?")
+    solar_output_num = float(solar_output)
+    print(solar_output_num)
+    value = (float(market_cap_num) / float(solar_output_num))
+    print("The value of this solar company as an investment is: ")
+    print("%.4f" % value)
+    print("1.0 being strong buy and .01 being strong sell")
+    print("-For Billion market capital companies, move decimal over 3 places")
+
+solar_value('hi')
