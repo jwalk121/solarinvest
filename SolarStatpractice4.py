@@ -23,4 +23,4 @@ def solar_value(myString):
     print("1.0 being strong buy and .01 being strong sell")
     print("-For Billion market capital companies, move decimal over 3 places")
 
-solar_value('hi')
+solar_value('hii')
